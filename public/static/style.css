@@ -1,0 +1,795 @@
+/* TravelMatch - Tinder Style Dating App CSS */
+
+/* ===== Custom Animations ===== */
+@keyframes swipeRight {
+  0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateX(150%) rotate(30deg); opacity: 0; }
+}
+
+@keyframes swipeLeft {
+  0% { transform: translateX(0) rotate(0deg); opacity: 1; }
+  100% { transform: translateX(-150%) rotate(-30deg); opacity: 0; }
+}
+
+@keyframes matchPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes heartBeat {
+  0%, 100% { transform: scale(1); }
+  25% { transform: scale(1.2); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.15); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== Base Styles ===== */
+* {
+  -webkit-tap-highlight-color: transparent;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  background: linear-gradient(135deg, #FFF5F5 0%, #FFF 50%, #F0FFFF 100%);
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
+/* ===== App Container (Mobile First) ===== */
+.app-container {
+  max-width: 430px;
+  margin: 0 auto;
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  position: relative;
+  background: white;
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Card Stack ===== */
+.card-stack {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 180px);
+  perspective: 1000px;
+}
+
+.swipe-card {
+  position: absolute;
+  width: calc(100% - 32px);
+  height: 100%;
+  left: 16px;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: grab;
+  user-select: none;
+  background: white;
+}
+
+.swipe-card:active {
+  cursor: grabbing;
+}
+
+.swipe-card.dragging {
+  transition: none;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+.swipe-card.swiping-right {
+  animation: swipeRight 0.3s ease-out forwards;
+}
+
+.swipe-card.swiping-left {
+  animation: swipeLeft 0.3s ease-out forwards;
+}
+
+/* Card Photo */
+.card-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: linear-gradient(135deg, #F5F5F5 0%, #E0E0E0 100%);
+}
+
+/* Card Info Overlay */
+.card-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 80px 20px 20px;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+  color: white;
+}
+
+/* Like/Nope Labels */
+.swipe-label {
+  position: absolute;
+  top: 40px;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: scale(0.8);
+  transition: opacity 0.2s, transform 0.2s;
+  z-index: 10;
+}
+
+.like-label {
+  left: 20px;
+  border: 4px solid #00B894;
+  color: #00B894;
+  transform: rotate(-20deg) scale(0.8);
+}
+
+.nope-label {
+  right: 20px;
+  border: 4px solid #E74C3C;
+  color: #E74C3C;
+  transform: rotate(20deg) scale(0.8);
+}
+
+.superlike-label {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  border: 4px solid #3B82F6;
+  color: #3B82F6;
+}
+
+/* ===== Action Buttons ===== */
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: white;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: none;
+  cursor: pointer;
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.action-btn:active {
+  transform: scale(0.95);
+}
+
+.action-btn-sm {
+  width: 48px;
+  height: 48px;
+  font-size: 18px;
+}
+
+.action-btn-md {
+  width: 56px;
+  height: 56px;
+  font-size: 22px;
+}
+
+.action-btn-lg {
+  width: 64px;
+  height: 64px;
+  font-size: 28px;
+}
+
+/* ===== Navigation Bar ===== */
+.bottom-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  background: white;
+  border-top: 1px solid #F0F0F0;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 430px;
+  z-index: 100;
+}
+
+.nav-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 16px;
+  color: #9CA3AF;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.2s;
+}
+
+.nav-item.active {
+  color: #FF6B6B;
+}
+
+.nav-item:hover {
+  color: #FF6B6B;
+}
+
+.nav-item i {
+  font-size: 22px;
+  margin-bottom: 4px;
+}
+
+/* Notification Badge */
+.nav-badge {
+  position: absolute;
+  top: -2px;
+  right: -6px;
+  min-width: 18px;
+  height: 18px;
+  background: #FF6B6B;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 5px;
+}
+
+/* ===== Top Header ===== */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: white;
+  border-bottom: 1px solid #F0F0F0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #FF6B6B;
+}
+
+.header-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.header-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #F5F5F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #636E72;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.header-btn:hover {
+  background: #E0E0E0;
+  color: #FF6B6B;
+}
+
+/* ===== Profile Tags ===== */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  color: white;
+}
+
+.tag-travel {
+  background: rgba(78, 205, 196, 0.8);
+}
+
+.tag-verified {
+  background: rgba(0, 184, 148, 0.8);
+}
+
+.tag-country {
+  background: rgba(255, 107, 107, 0.8);
+}
+
+/* ===== Match Animation ===== */
+.match-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.95) 0%, rgba(78, 205, 196, 0.95) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.match-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.match-content {
+  animation: matchPop 0.5s ease-out;
+  text-align: center;
+  color: white;
+}
+
+/* ===== Chat Styles ===== */
+.chat-list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #F0F0F0;
+  transition: background 0.2s;
+  cursor: pointer;
+}
+
+.chat-list-item:hover {
+  background: #FAFAFA;
+}
+
+.chat-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #F0F0F0;
+}
+
+.chat-avatar.online::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  background: #00B894;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.chat-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.chat-name {
+  font-weight: 600;
+  color: #2D3436;
+  margin-bottom: 4px;
+}
+
+.chat-preview {
+  font-size: 14px;
+  color: #9CA3AF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chat-meta {
+  text-align: right;
+}
+
+.chat-time {
+  font-size: 12px;
+  color: #9CA3AF;
+}
+
+.chat-unread {
+  min-width: 20px;
+  height: 20px;
+  background: #FF6B6B;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 6px;
+  margin-top: 4px;
+}
+
+/* ===== Form Styles ===== */
+.form-input {
+  width: 100%;
+  padding: 14px 16px;
+  border: 2px solid #E5E7EB;
+  border-radius: 12px;
+  font-size: 16px;
+  transition: all 0.2s;
+  background: white;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #FF6B6B;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.form-label {
+  display: block;
+  font-weight: 500;
+  color: #2D3436;
+  margin-bottom: 8px;
+}
+
+/* ===== Travel Schedule Card ===== */
+.schedule-card {
+  background: linear-gradient(135deg, #FF6B6B 0%, #4ECDC4 100%);
+  border-radius: 16px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 16px;
+}
+
+.schedule-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* ===== Verified Badge ===== */
+.verified-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #00B894;
+  font-size: 14px;
+}
+
+.verified-badge i {
+  background: #00B894;
+  color: white;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+}
+
+/* ===== Country Flag Badge ===== */
+.country-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.country-badge.korea {
+  background: rgba(0, 53, 128, 0.1);
+  color: #003580;
+}
+
+.country-badge.japan {
+  background: rgba(188, 0, 45, 0.1);
+  color: #BC002D;
+}
+
+/* ===== Loading Skeleton ===== */
+.skeleton {
+  background: linear-gradient(90deg, #F0F0F0 25%, #E0E0E0 50%, #F0F0F0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+/* ===== Safe Area Padding ===== */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .bottom-nav {
+    padding-bottom: calc(12px + env(safe-area-inset-bottom));
+  }
+  
+  .action-buttons {
+    padding-bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+}
+
+/* ===== Scrollbar ===== */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D1D5DB;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9CA3AF;
+}
+
+/* ===== Page Transitions ===== */
+.page-enter {
+  animation: slideUp 0.3s ease-out;
+}
+
+.page-fade {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* ===== Modal Styles ===== */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 900;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.modal-backdrop.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100%;
+  max-width: 430px;
+  background: white;
+  border-radius: 24px 24px 0 0;
+  z-index: 901;
+  transition: transform 0.3s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-backdrop.active .modal-content {
+  transform: translateX(-50%) translateY(0);
+}
+
+.modal-handle {
+  width: 40px;
+  height: 4px;
+  background: #D1D5DB;
+  border-radius: 2px;
+  margin: 12px auto;
+}
+
+/* ===== Swipe Indicator ===== */
+.swipe-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 80px;
+  opacity: 0;
+  transition: opacity 0.2s;
+  z-index: 20;
+}
+
+.swipe-indicator.left {
+  left: 30px;
+  color: #E74C3C;
+}
+
+.swipe-indicator.right {
+  right: 30px;
+  color: #00B894;
+}
+
+/* ===== Premium Badge ===== */
+.premium-badge {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ===== Travel Style Tags ===== */
+.travel-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid #E5E7EB;
+  background: white;
+  color: #636E72;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.travel-tag:hover {
+  border-color: #FF6B6B;
+  color: #FF6B6B;
+}
+
+.travel-tag.active {
+  background: #FF6B6B;
+  border-color: #FF6B6B;
+  color: white;
+}
+
+/* ===== SOS Button ===== */
+.sos-btn {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  width: 56px;
+  height: 56px;
+  background: #E74C3C;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  box-shadow: 0 4px 20px rgba(231, 76, 60, 0.4);
+  z-index: 80;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.sos-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(231, 76, 60, 0.5);
+}
+
+/* ===== Language Toggle ===== */
+.lang-toggle {
+  display: flex;
+  background: #F5F5F5;
+  border-radius: 20px;
+  padding: 4px;
+}
+
+.lang-option {
+  padding: 8px 16px;
+  border-radius: 16px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #636E72;
+  cursor: pointer;
+  transition: all 0.2s;
+  border: none;
+  background: transparent;
+}
+
+.lang-option.active {
+  background: white;
+  color: #2D3436;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===== Profile Photo Grid ===== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.photo-grid-item {
+  aspect-ratio: 1;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.photo-grid-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+  border-radius: 12px;
+}
+
+.photo-grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-add-btn {
+  width: 100%;
+  height: 100%;
+  border: 2px dashed #D1D5DB;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #FAFAFA;
+}
+
+.photo-add-btn:hover {
+  border-color: #FF6B6B;
+  color: #FF6B6B;
+  background: #FFF5F5;
+}
