@@ -202,37 +202,37 @@ app.get('/api/guides', (c) => {
 
 // Home - Swipe Cards
 app.get('/', (c) => {
-  return c.render(<HomePage />, { title: 'TravelMatch - 홈' })
+  return c.render(<HomePage />, { title: 'MONOMONO - 홈' })
 })
 
 // Matches
 app.get('/matches', (c) => {
-  return c.render(<MatchesPage />, { title: 'TravelMatch - 매칭' })
+  return c.render(<MatchesPage />, { title: 'MONOMONO - 매칭' })
 })
 
 // Chat
 app.get('/chat', (c) => {
-  return c.render(<ChatPage />, { title: 'TravelMatch - 채팅' })
+  return c.render(<ChatPage />, { title: 'MONOMONO - 채팅' })
 })
 
 app.get('/chat/:id', (c) => {
   const id = c.req.param('id')
-  return c.render(<ChatPage chatId={id} />, { title: 'TravelMatch - 채팅' })
+  return c.render(<ChatPage chatId={id} />, { title: 'MONOMONO - 채팅' })
 })
 
 // Travel Schedule
 app.get('/travel', (c) => {
-  return c.render(<TravelPage />, { title: 'TravelMatch - 여행' })
+  return c.render(<TravelPage />, { title: 'MONOMONO - 여행' })
 })
 
 // Profile
 app.get('/profile', (c) => {
-  return c.render(<ProfilePage />, { title: 'TravelMatch - 프로필' })
+  return c.render(<ProfilePage />, { title: 'MONOMONO - 프로필' })
 })
 
 // Onboarding
 app.get('/onboarding', (c) => {
-  return c.render(<OnboardingPage />, { title: 'TravelMatch - 시작하기' })
+  return c.render(<OnboardingPage />, { title: 'MONOMONO - 시작하기' })
 })
 
 export default app

@@ -1,13 +1,15 @@
-# TravelMatch - 한일 여행 매칭 플랫폼
+# MONOMONO - 한일 여행 매칭 플랫폼
 
-![TravelMatch](https://img.shields.io/badge/TravelMatch-v1.0.0-FF6B6B)
+![MONOMONO](https://img.shields.io/badge/MONOMONO-v1.0.0-FF6B6B)
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Hono](https://img.shields.io/badge/Hono-4.x-orange)
 ![Cloudflare](https://img.shields.io/badge/Cloudflare-Pages-F38020)
 
 ## 📌 프로젝트 개요
 
-**TravelMatch**는 한국-일본 20~30대 청년들을 여행을 계기로 자연스럽게 연결하는 **여행 × 문화교류 × 로컬체험 기반 매칭 플랫폼**입니다.
+**MONOMONO**는 한국-일본 20~30대 청년들을 여행을 계기로 자연스럽게 연결하는 **여행 × 문화교류 × 로컬체험 기반 매칭 플랫폼**입니다.
+
+> "모노모노" - 일본어로 "것들(もの)", 한국어로 "모두 모두"의 의미를 담아 한일 청년들이 함께하는 여행을 의미합니다.
 
 - 🎯 **목표**: 한·일 청년 간 자연스러운 만남 및 교류 촉진
 - 🌏 **특징**: 여행 취향과 일정 기반의 매칭, 지역경제·로컬 문화 활성화
@@ -181,4 +183,4 @@ MIT License
 
 ---
 
-**TravelMatch** - 여행으로 시작되는 새로운 인연 ✈️💕
+**MONOMONO** - 여행으로 시작되는 새로운 인연 ✈️💕

@@ -1,4 +1,4 @@
-// TravelMatch - Main Application JavaScript
+// MONOMONO - Main Application JavaScript
 // Tinder-style Swipe Card Interactions
 
 // ===== Global State =====
@@ -479,4 +479,4 @@ function showStep(step) {
   }
 }
 
-console.log('TravelMatch App Initialized 🛫');
+console.log('MONOMONO App Initialized 🛫');

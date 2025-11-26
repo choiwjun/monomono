@@ -11,7 +11,7 @@ export const OnboardingPage: FC = () => {
             <div style="font-size: 80px; margin-bottom: 24px;">
               <i class="fas fa-plane-departure"></i>
             </div>
-            <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 12px;">TravelMatch</h1>
+            <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 12px;">MONOMONO</h1>
             <p style="font-size: 18px; opacity: 0.9; margin-bottom: 8px;">한일 여행 매칭 플랫폼</p>
             <p style="font-size: 14px; opacity: 0.8;">여행을 통해 새로운 친구를 만나세요</p>
             

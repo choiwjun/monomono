@@ -243,7 +243,7 @@ export const ProfilePage: FC = () => {
         </button>
 
         <p style="text-align: center; color: #9CA3AF; font-size: 12px; margin-top: 24px;">
-          TravelMatch v1.0.0
+          MONOMONO v1.0.0
         </p>
       </div>
     </Layout>

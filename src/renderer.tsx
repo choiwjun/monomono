@@ -9,7 +9,7 @@ export const renderer = jsxRenderer(({ children, title }) => {
         <meta name="theme-color" content="#FF6B6B" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <title>{title || 'TravelMatch - 한일 여행 매칭'}</title>
+        <title>{title || 'MONOMONO - 한일 여행 매칭'}</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet" />

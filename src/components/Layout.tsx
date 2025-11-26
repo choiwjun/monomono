@@ -21,7 +21,7 @@ export const Layout: FC<LayoutProps> = ({
         <header class="top-header">
           <div class="logo">
             <i class="fas fa-plane-departure"></i>
-            <span>TravelMatch</span>
+            <span>MONOMONO</span>
           </div>
           <div class="header-actions">
             <button class="header-btn" onclick="toggleLanguage()">
