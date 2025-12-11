@@ -4,24 +4,24 @@ import { Layout } from '../components/Layout'
 export const ProfilePage: FC = () => {
   return (
     <Layout activeTab="profile">
-      <div style="padding: 20px;">
+      <div style="padding-bottom: 100px;">
         {/* Profile Header */}
-        <div style="text-align: center; margin-bottom: 24px;">
+        <div style="padding: 32px 20px 24px; text-align: center;">
           <div style="position: relative; display: inline-block; margin-bottom: 16px;">
             <img 
               src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=200" 
               alt="Profile"
-              style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 4px 20px rgba(0,0,0,0.15);"
+              style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 4px solid white; box-shadow: 0 8px 32px rgba(29,43,79,0.15);"
             />
-            <button style="position: absolute; bottom: 4px; right: 4px; width: 36px; height: 36px; background: linear-gradient(135deg, #FF6B6B, #E85555); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; cursor: pointer;">
+            <button style="position: absolute; bottom: 4px; right: 4px; width: 36px; height: 36px; background: linear-gradient(135deg, #F57CA8, #E85A8A); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 3px solid white; cursor: pointer; box-shadow: 0 4px 12px rgba(245,124,168,0.3);">
               <i class="fas fa-camera" style="color: white; font-size: 14px;"></i>
             </button>
           </div>
-          <h1 style="font-size: 24px; font-weight: 700; color: #2D3436; margin-bottom: 4px;">
+          <h1 style="font-size: 26px; font-weight: 700; color: #1D2B4F; margin-bottom: 4px;">
             민준
-            <span style="font-size: 20px; font-weight: 400; color: #636E72; margin-left: 8px;">27</span>
+            <span style="font-size: 22px; font-weight: 400; color: #757575; margin-left: 8px;">27</span>
           </h1>
-          <div style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-bottom: 12px;">
+          <div style="display: flex; justify-content: center; align-items: center; gap: 8px; margin-bottom: 16px;">
             <span class="country-badge korea">
               🇰🇷 서울
             </span>
@@ -30,50 +30,40 @@ export const ProfilePage: FC = () => {
               인증됨
             </span>
           </div>
-          <p style="color: #636E72; font-size: 14px;">프로필 완성도 85%</p>
-          <div style="width: 200px; height: 6px; background: #E5E7EB; border-radius: 3px; margin: 8px auto 0;">
-            <div style="width: 85%; height: 100%; background: linear-gradient(135deg, #FF6B6B, #E85555); border-radius: 3px;"></div>
-          </div>
-        </div>
-
-        {/* Premium Banner */}
-        <div style="background: linear-gradient(135deg, #1a1a2e, #16213e); border-radius: 16px; padding: 20px; margin-bottom: 24px; position: relative; overflow: hidden;">
-          <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: rgba(255,215,0,0.1); border-radius: 50%;"></div>
-          <div style="position: relative;">
-            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
-              <i class="fas fa-crown" style="color: #FFD700; font-size: 24px;"></i>
-              <span style="color: #FFD700; font-weight: 700; font-size: 18px;">프리미엄</span>
+          
+          {/* Profile Completion */}
+          <div style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 16px; background: #F4EDE4; border-radius: 20px;">
+            <span style="font-size: 13px; color: #757575;">프로필 완성도</span>
+            <span style="font-size: 14px; font-weight: 600; color: #F57CA8;">85%</span>
+            <div style="width: 60px; height: 6px; background: #E8DED2; border-radius: 3px; overflow: hidden;">
+              <div style="width: 85%; height: 100%; background: linear-gradient(90deg, #F57CA8, #6ECFF6); border-radius: 3px;"></div>
             </div>
-            <p style="color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 16px;">
-              나를 좋아하는 사람 확인, 무제한 매칭, 광고 제거
-            </p>
-            <button style="padding: 12px 24px; background: linear-gradient(135deg, #FFD700, #FFA500); color: #1a1a2e; border-radius: 25px; font-weight: 600; border: none; cursor: pointer;">
-              ₩9,900/월 시작하기
-            </button>
           </div>
         </div>
 
         {/* Stats */}
-        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px;">
-          <div style="background: white; padding: 16px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-            <p style="font-size: 24px; font-weight: 700; color: #FF6B6B;">23</p>
-            <p style="font-size: 12px; color: #636E72;">받은 좋아요</p>
-          </div>
-          <div style="background: white; padding: 16px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-            <p style="font-size: 24px; font-weight: 700; color: #4ECDC4;">12</p>
-            <p style="font-size: 12px; color: #636E72;">매칭</p>
-          </div>
-          <div style="background: white; padding: 16px; border-radius: 12px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-            <p style="font-size: 24px; font-weight: 700; color: #9B59B6;">156</p>
-            <p style="font-size: 12px; color: #636E72;">프로필 조회</p>
+        <div style="padding: 0 20px 24px;">
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;">
+            <div class="card" style="padding: 16px; text-align: center;">
+              <p style="font-size: 28px; font-weight: 700; color: #F57CA8; margin-bottom: 4px;">23</p>
+              <p style="font-size: 12px; color: #757575;">받은 요청</p>
+            </div>
+            <div class="card" style="padding: 16px; text-align: center;">
+              <p style="font-size: 28px; font-weight: 700; color: #6ECFF6; margin-bottom: 4px;">12</p>
+              <p style="font-size: 12px; color: #757575;">연결됨</p>
+            </div>
+            <div class="card" style="padding: 16px; text-align: center;">
+              <p style="font-size: 28px; font-weight: 700; color: #FFA873; margin-bottom: 4px;">156</p>
+              <p style="font-size: 12px; color: #757575;">프로필 조회</p>
+            </div>
           </div>
         </div>
 
         {/* Photo Grid */}
-        <div style="margin-bottom: 24px;">
+        <div style="padding: 0 20px 24px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <h2 style="font-size: 16px; font-weight: 600; color: #2D3436;">내 사진</h2>
-            <button style="color: #FF6B6B; font-size: 14px; font-weight: 500; background: none; border: none; cursor: pointer;">
+            <h2 style="font-size: 16px; font-weight: 600; color: #1D2B4F;">내 사진</h2>
+            <button class="btn-ghost" style="padding: 6px 12px; color: #F57CA8; font-size: 13px;">
               편집
             </button>
           </div>
@@ -98,107 +88,130 @@ export const ProfilePage: FC = () => {
           </div>
         </div>
 
-        {/* About Section */}
-        <div style="background: white; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+        {/* My Travel Schedule */}
+        <div style="padding: 0 20px 24px;">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <h2 style="font-size: 16px; font-weight: 600; color: #2D3436;">자기소개</h2>
-            <button style="color: #FF6B6B; font-size: 14px; font-weight: 500; background: none; border: none; cursor: pointer;">
-              <i class="fas fa-pencil-alt"></i>
+            <h2 style="font-size: 16px; font-weight: 600; color: #1D2B4F;">다음 여행</h2>
+            <button class="btn-ghost" style="padding: 6px 12px; color: #F57CA8; font-size: 13px;">
+              <i class="fas fa-plus" style="margin-right: 4px;"></i>추가
             </button>
           </div>
-          <p style="color: #636E72; line-height: 1.6;">
-            도쿄에서 한 달 살기 예정입니다. 현지 친구 사귀고 싶어요! 라멘 맛집 추천해주세요 🍜
-            <br /><br />
-            여행과 사진 찍는 걸 좋아합니다. 일본어 회화 가능해요!
-          </p>
+          <div class="schedule-card">
+            <div style="display: flex; justify-content: space-between; align-items: start; position: relative; z-index: 1;">
+              <div>
+                <p style="font-size: 12px; opacity: 0.8; margin-bottom: 4px;">예정된 여행</p>
+                <p style="font-size: 18px; font-weight: 700;">
+                  <i class="fas fa-plane" style="margin-right: 8px;"></i>도쿄, 일본
+                </p>
+              </div>
+              <span style="background: rgba(255,255,255,0.2); padding: 6px 12px; border-radius: 16px; font-size: 12px;">
+                4/10 - 5/10
+              </span>
+            </div>
+          </div>
+        </div>
+
+        {/* About Section */}
+        <div style="padding: 0 20px 16px;">
+          <div class="card" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h2 style="font-size: 16px; font-weight: 600; color: #1D2B4F;">자기소개</h2>
+              <button class="btn-ghost" style="padding: 6px 10px; color: #F57CA8; font-size: 13px;">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </div>
+            <p style="color: #616161; line-height: 1.7; font-size: 15px;">
+              도쿄에서 한 달 살기 예정입니다. 현지 친구 사귀고 싶어요! 라멘 맛집 추천해주세요 🍜
+              <br /><br />
+              여행과 사진 찍는 걸 좋아합니다. 일본어 회화 가능해요!
+            </p>
+          </div>
         </div>
 
         {/* Travel Style */}
-        <div style="background: white; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <h2 style="font-size: 16px; font-weight: 600; color: #2D3436;">여행 스타일</h2>
-            <button style="color: #FF6B6B; font-size: 14px; font-weight: 500; background: none; border: none; cursor: pointer;">
-              <i class="fas fa-pencil-alt"></i>
-            </button>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span class="travel-tag active">🍜 미식</span>
-            <span class="travel-tag active">🎭 로컬체험</span>
-            <span class="travel-tag active">🏖️ 힐링</span>
-            <span class="travel-tag">☕ 카페투어</span>
-            <span class="travel-tag">🛍️ 쇼핑</span>
-            <span class="travel-tag">♨️ 온천</span>
+        <div style="padding: 0 20px 16px;">
+          <div class="card" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h2 style="font-size: 16px; font-weight: 600; color: #1D2B4F;">여행 스타일</h2>
+              <button class="btn-ghost" style="padding: 6px 10px; color: #F57CA8; font-size: 13px;">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="chip chip-outline active">🍜 미식</span>
+              <span class="chip chip-outline active">🎭 로컬체험</span>
+              <span class="chip chip-outline active">🏖️ 힐링</span>
+              <span class="chip chip-outline">☕ 카페투어</span>
+              <span class="chip chip-outline">🛍️ 쇼핑</span>
+              <span class="chip chip-outline">♨️ 온천</span>
+            </div>
           </div>
         </div>
 
         {/* Languages */}
-        <div style="background: white; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-            <h2 style="font-size: 16px; font-weight: 600; color: #2D3436;">언어</h2>
-            <button style="color: #FF6B6B; font-size: 14px; font-weight: 500; background: none; border: none; cursor: pointer;">
-              <i class="fas fa-pencil-alt"></i>
-            </button>
-          </div>
-          <div style="display: flex; flex-wrap: wrap; gap: 8px;">
-            <span style="padding: 8px 14px; background: #F5F5F5; border-radius: 20px; font-size: 13px;">
-              🇰🇷 한국어 (원어민)
-            </span>
-            <span style="padding: 8px 14px; background: #F5F5F5; border-radius: 20px; font-size: 13px;">
-              🇯🇵 일본어 (고급)
-            </span>
-            <span style="padding: 8px 14px; background: #F5F5F5; border-radius: 20px; font-size: 13px;">
-              🇺🇸 영어 (중급)
-            </span>
+        <div style="padding: 0 20px 16px;">
+          <div class="card" style="padding: 20px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h2 style="font-size: 16px; font-weight: 600; color: #1D2B4F;">언어</h2>
+              <button class="btn-ghost" style="padding: 6px 10px; color: #F57CA8; font-size: 13px;">
+                <i class="fas fa-pencil-alt"></i>
+              </button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="chip chip-filled">🇰🇷 한국어 (원어민)</span>
+              <span class="chip chip-filled">🇯🇵 일본어 (고급)</span>
+              <span class="chip chip-filled">🇺🇸 영어 (중급)</span>
+            </div>
           </div>
         </div>
 
-        {/* Verification */}
-        <div style="background: white; border-radius: 16px; padding: 20px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <h2 style="font-size: 16px; font-weight: 600; color: #2D3436; margin-bottom: 16px;">인증 상태</h2>
-          
-          <div style="space-y: 12px;">
+        {/* Verification Status */}
+        <div style="padding: 0 20px 16px;">
+          <div class="card" style="padding: 20px;">
+            <h2 style="font-size: 16px; font-weight: 600; color: #1D2B4F; margin-bottom: 16px;">인증 상태</h2>
+            
             {/* Email Verified */}
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #F0F0F0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #F4EDE4;">
               <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 40px; height: 40px; background: #E8F5E9; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <i class="fas fa-envelope" style="color: #00B894;"></i>
+                <div style="width: 44px; height: 44px; background: #C4F2E3; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-envelope" style="color: #2ECC71; font-size: 18px;"></i>
                 </div>
-                <span>이메일 인증</span>
+                <span style="font-size: 15px; color: #1D2B4F;">이메일 인증</span>
               </div>
-              <i class="fas fa-check-circle" style="color: #00B894; font-size: 20px;"></i>
+              <i class="fas fa-check-circle" style="color: #2ECC71; font-size: 22px;"></i>
             </div>
 
             {/* Phone Verified */}
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #F0F0F0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #F4EDE4;">
               <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 40px; height: 40px; background: #E8F5E9; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <i class="fas fa-phone" style="color: #00B894;"></i>
+                <div style="width: 44px; height: 44px; background: #C4F2E3; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-phone" style="color: #2ECC71; font-size: 18px;"></i>
                 </div>
-                <span>휴대전화 인증</span>
+                <span style="font-size: 15px; color: #1D2B4F;">휴대전화 인증</span>
               </div>
-              <i class="fas fa-check-circle" style="color: #00B894; font-size: 20px;"></i>
+              <i class="fas fa-check-circle" style="color: #2ECC71; font-size: 22px;"></i>
             </div>
 
             {/* ID Verified */}
-            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #F0F0F0;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #F4EDE4;">
               <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 40px; height: 40px; background: #E8F5E9; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <i class="fas fa-id-card" style="color: #00B894;"></i>
+                <div style="width: 44px; height: 44px; background: #C4F2E3; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-id-card" style="color: #2ECC71; font-size: 18px;"></i>
                 </div>
-                <span>신분증 인증</span>
+                <span style="font-size: 15px; color: #1D2B4F;">신분증 인증</span>
               </div>
-              <i class="fas fa-check-circle" style="color: #00B894; font-size: 20px;"></i>
+              <i class="fas fa-check-circle" style="color: #2ECC71; font-size: 22px;"></i>
             </div>
 
-            {/* Travel Verified */}
+            {/* Travel Verified - Pending */}
             <div style="display: flex; justify-content: space-between; align-items: center; padding: 12px 0;">
               <div style="display: flex; align-items: center; gap: 12px;">
-                <div style="width: 40px; height: 40px; background: #E3F2FD; border-radius: 10px; display: flex; align-items: center; justify-content: center;">
-                  <i class="fas fa-plane" style="color: #3B82F6;"></i>
+                <div style="width: 44px; height: 44px; background: #E8F7FD; border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                  <i class="fas fa-plane" style="color: #6ECFF6; font-size: 18px;"></i>
                 </div>
-                <span>여행자 인증</span>
+                <span style="font-size: 15px; color: #1D2B4F;">여행자 인증</span>
               </div>
-              <button style="padding: 8px 16px; background: #3B82F6; color: white; border-radius: 20px; font-size: 13px; font-weight: 500; border: none; cursor: pointer;">
+              <button class="btn-primary sky" style="padding: 8px 16px; font-size: 13px;">
                 인증하기
               </button>
             </div>
@@ -206,43 +219,47 @@ export const ProfilePage: FC = () => {
         </div>
 
         {/* Settings Menu */}
-        <div style="background: white; border-radius: 16px; overflow: hidden; margin-bottom: 24px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          <a href="/settings" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #F0F0F0; text-decoration: none; color: #2D3436;">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <i class="fas fa-cog" style="color: #636E72;"></i>
-              <span>설정</span>
-            </div>
-            <i class="fas fa-chevron-right" style="color: #D1D5DB;"></i>
-          </a>
-          <a href="/safety" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #F0F0F0; text-decoration: none; color: #2D3436;">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <i class="fas fa-shield-alt" style="color: #636E72;"></i>
-              <span>안전 센터</span>
-            </div>
-            <i class="fas fa-chevron-right" style="color: #D1D5DB;"></i>
-          </a>
-          <a href="/help" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #F0F0F0; text-decoration: none; color: #2D3436;">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <i class="fas fa-question-circle" style="color: #636E72;"></i>
-              <span>도움말</span>
-            </div>
-            <i class="fas fa-chevron-right" style="color: #D1D5DB;"></i>
-          </a>
-          <a href="/invite" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; text-decoration: none; color: #2D3436;">
-            <div style="display: flex; align-items: center; gap: 12px;">
-              <i class="fas fa-gift" style="color: #FF6B6B;"></i>
-              <span>친구 초대하기</span>
-            </div>
-            <span style="background: #FFF5F5; color: #FF6B6B; padding: 4px 8px; border-radius: 8px; font-size: 12px;">프리미엄 1주 무료</span>
-          </a>
+        <div style="padding: 0 20px 16px;">
+          <div class="card" style="overflow: hidden;">
+            <a href="/settings" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #F4EDE4; text-decoration: none; color: #1D2B4F;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="fas fa-cog" style="color: #757575; font-size: 18px;"></i>
+                <span style="font-size: 15px;">설정</span>
+              </div>
+              <i class="fas fa-chevron-right" style="color: #BDBDBD;"></i>
+            </a>
+            <a href="/safety" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #F4EDE4; text-decoration: none; color: #1D2B4F;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="fas fa-shield-alt" style="color: #6ECFF6; font-size: 18px;"></i>
+                <span style="font-size: 15px;">안전 센터</span>
+              </div>
+              <i class="fas fa-chevron-right" style="color: #BDBDBD;"></i>
+            </a>
+            <a href="/help" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; border-bottom: 1px solid #F4EDE4; text-decoration: none; color: #1D2B4F;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="fas fa-question-circle" style="color: #757575; font-size: 18px;"></i>
+                <span style="font-size: 15px;">도움말</span>
+              </div>
+              <i class="fas fa-chevron-right" style="color: #BDBDBD;"></i>
+            </a>
+            <a href="/invite" style="display: flex; justify-content: space-between; align-items: center; padding: 16px 20px; text-decoration: none; color: #1D2B4F;">
+              <div style="display: flex; align-items: center; gap: 12px;">
+                <i class="fas fa-gift" style="color: #F57CA8; font-size: 18px;"></i>
+                <span style="font-size: 15px;">친구 초대하기</span>
+              </div>
+              <span style="background: #FFF5F8; color: #F57CA8; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 500;">무료 혜택</span>
+            </a>
+          </div>
         </div>
 
         {/* Logout */}
-        <button style="width: 100%; padding: 16px; color: #E74C3C; background: white; border-radius: 12px; font-weight: 500; border: none; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
-          로그아웃
-        </button>
+        <div style="padding: 0 20px 24px;">
+          <button style="width: 100%; padding: 16px; color: #E74C3C; background: white; border-radius: 16px; font-size: 15px; font-weight: 500; border: none; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.04);">
+            로그아웃
+          </button>
+        </div>
 
-        <p style="text-align: center; color: #9CA3AF; font-size: 12px; margin-top: 24px;">
+        <p style="text-align: center; color: #BDBDBD; font-size: 12px; padding-bottom: 20px;">
           MONOMONO v1.0.0
         </p>
       </div>
